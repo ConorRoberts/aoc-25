@@ -1,6 +1,5 @@
-use std::fs;
-
 use aoc_25::*;
+use std::fs;
 
 const DIGITS: usize = 12;
 const ZERO_CHAR_CODE: usize = 48;
