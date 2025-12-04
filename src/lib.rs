@@ -1,4 +1,6 @@
-fn ten_to(exp: u32) -> u64 {
+use std::env;
+
+pub fn ten_to(exp: u32) -> u64 {
     10u64.pow(exp)
 }
 
@@ -29,3 +31,11 @@ pub fn parse_number(s: &str) -> u64 {
 //         assert_eq!(parse_number("11"), 11);
 //     }
 // }
+
+pub fn get_input_file() -> String {
+    let args: Vec<String> = env::args().collect();
+
+    let file_name = args.get(1).unwrap_or_else(|| panic!("Invalid file"));
+
+    file_name.clone()
+}
